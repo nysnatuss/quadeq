@@ -4,12 +4,38 @@
 		<title>quadeq</title>
 		<meta charset="utf-8"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.5/math.min.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
 		<script type="text/javascript" src="quadeq.js"></script>
 		<link rel="stylesheet" href="common.css" />
+		<script type="text/javascript" async
+		  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+		</script>
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
 	</head>
 
 	<body>
+		<p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are $x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$</p>
+		<p>Please insert the values of $a, b ,c$ accordingly below:</p>
 		
+		<input type="number" id="aVar" min="-10000" max="10000" value="2"/>
+		<input type="number" id="bVar" min="-10000" max="10000" value="-5"/>
+		<input type="number" id="cVar" min="-10000" max="10000" value="-3"/>
+		<button class="navy-button" onclick="checkval()">Calculate!</button>
+		
+		<div id="answer" style="display:none">
+			<p>Your input:</p>
+			<p id="inputans"></p>
+			
+			<p style="display:inline">Use the Quadratic Formula with </p><p id="inputabc" style="display:inline"></p>
+			<p id="quadeqshow">$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$</p>
+			
+			<p id="subfirst"></p>
+			<p id="simplify"></p>
+			<p id="ans"></p>
+			<p id="deci"></p>
+		</div>
 	</body>
 <html/>

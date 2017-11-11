@@ -67,7 +67,7 @@ function calc() {
 	var calcres;
 	var calc1 = (firstnum + Math.sqrt(secondnum)) / thirdnum;
 	var calc2 = (firstnum - Math.sqrt(secondnum)) / thirdnum;
-	if (secondnum < 0) {
+	if (secondnum) {
 		$('#ans').css("display", "block");
 		$('#ans').text("Oops! You cannot square root a negative number!");
 		$('#ans').css("color", "red");
@@ -94,10 +94,17 @@ function calc() {
 				} else {
 					calcres += calc2;
 				}
-				calcres += "$";
 			} else {
-				$('#ans').text("$x=$ $" + calc1 + "$");
+				if (calc1 % 1 !== 0) {
+					if (calc1 < 0) {
+						calcres += "-";
+					}
+					calcres += math.fraction(calc1).n + "\\over" + math.fraction(calc1).d;
+				} else {
+					calcres += calc1;
+				}
 			}
+			calcres += "$";
 		}
 		$('#ans').text(calcres);
 		

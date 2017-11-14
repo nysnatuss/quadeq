@@ -2,6 +2,12 @@ var aVar;
 var bVar;
 var cVar;
 
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        checkval();
+    }
+});
+
 function checkval() {
 	aVar = Number($('#aVar').val());
 	bVar = Number($('#bVar').val());

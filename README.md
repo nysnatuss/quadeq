@@ -1,2 +1,2 @@
 # quadeq
-Quadratic Equation solver with Javascript and MathJax.
+Simple and open-sourced quadratic equation solver with Javascript, [MathJax](https://github.com/mathjax/MathJax) and [math.js](https://github.com/josdejong/mathjs)
